@@ -1,0 +1,8 @@
+*.jpeg
+*.jpg
+
+*.avi
+*.DS_Store
+*.mat
+coding_tools/ROI_GUI/demo_subject
+*.tgz
