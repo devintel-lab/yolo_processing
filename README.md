@@ -60,4 +60,4 @@ list_of_test_images.txt output.txt
 trained_model_weights/yolo_19000.weights
 ```
 
-Here ```list_of_test_images.txt``` is in the same format as the ```training.txt``` files mentioned earlier, just a list of paths to .jpg images, and ```output.txt``` is where you want YOLO to dump the inference results. In this command you would replace ```yolo_19000.weights``` with whatever the weights file with the highest number was, which will be unique to your particular training.
+Here ```list_of_test_images.txt``` is in the same format as the ```training.txt``` file mentioned earlier, just a list of paths to .jpg images, and ```output.txt``` is where you want YOLO to dump the inference results. In this command you would replace ```yolo_19000.weights``` with whatever the weights file with the highest number was, which will be unique to your particular training.
