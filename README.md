@@ -41,9 +41,7 @@ $ wget http://pjreddie.com/media/files/extraction.conv.weights
 Assuming the outputs from ```create_training_data_from_annotations``` have beeen created and darknet has been compiled, YOLO training is run inside the ```darknet_for_toy``` directory with this command:
 
 ```bash
-$ ./darknet yolo train cfg/yolo.train.cfg
-path/to/training.txt
-trained_model_weights extraction.conv.weights 2>&1  | tee training.log
+$ ./darknet yolo train cfg/yolo.train.cfg path/to/training.txt trained_model_weights extraction.conv.weights 2>&1  | tee training.log
 ```
 
 This command will take a number of hours to run. When running it, make sure to use [nohup](https://www.computerhope.com/unix/unohup.htm) or [screen](https://linuxize.com/post/how-to-use-linux-screen/) so that the training process isn't shut down when your computer loses internet connection, or disconnects from the GPU server for whatever reason.
@@ -55,9 +53,7 @@ The training process will produce a number of model weights files, which you can
 To generate bounding boxes on new data, you'll need to pass YOLO a list of paths to new images:
 
 ```bash
-$ ./darknet yolo getboxes cfg/yolo.cfg
-list_of_test_images.txt output.txt
-trained_model_weights/yolo_19000.weights
+$ ./darknet yolo getboxes cfg/yolo.cfg list_of_test_images.txt output.txt trained_model_weights/yolo_19000.weights
 ```
 
 Here ```list_of_test_images.txt``` is in the same format as the ```training.txt``` file mentioned earlier, just a list of paths to .jpg images, and ```output.txt``` is where you want YOLO to dump the inference results. In this command you would replace ```yolo_19000.weights``` with whatever the weights file with the highest number was, which will be unique to your particular training.
