@@ -52,7 +52,7 @@ The training process will produce a number of model weights files, which you can
 
 ## Testing training results
 
-To generate :
+To generate bounding boxes on new data, you'll need to pass YOLO a list of paths to new images:
 
 ```bash
 $ ./darknet yolo getboxes cfg/yolo.cfg
